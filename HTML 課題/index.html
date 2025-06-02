@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>個人的大分県ラーメンランキング</title>
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap" rel="stylesheet">
+<!-- Lucide アイコン -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- CSSファイル -->
+<link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ベーススタイル */
+    body {
+      font-family: 'M PLUS 1p', sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #111;
+    }
+
+    a {
+      color: #e63946;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ヘッダー */
+    header {
+      background: #000;
+      color: #fff;
+      padding: 1rem 0;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #e63946;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* セクション */
+    .section {
+      padding: 2rem 0;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #e63946;
+      padding-bottom: 0.5rem;
+      color: #e63946;
+    }
+
+    /* カード */
+    .card-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      display: flex;
+      gap: 1rem;
+      background: #fafafa;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      width: 120px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .card-content h3 {
+      margin-top: 0;
+    }
+
+    /* フッター */
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+      .nav ul {
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+        padding: 1rem;
+      }
+
+      .nav.open ul {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .card img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <h1 class="logo">個人的大分県ラーメンランキング</h1>
+      <nav class="nav" id="nav" aria-label="メインナビゲーション">
+        <ul>
+          <li><a href="#about">紹介</a></li>
+          <li><a href="#ranking">ランキング</a></li>
+          <li><a href="#footer">連絡先</a></li>
+        </ul>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="メニューを開く">☰</button>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>このサイトについて</h2>
+      <p>個人的に好きなラーメンをランキング形式で紹介するサイトです。</p>
+      <p>大分県には個性豊かなラーメン店が数多くあります。本サイトでは、筆者が実際に訪れた店舗の中から特におすすめしたいラーメンをランキング形式で紹介しています。</p>
+      <p>濃厚豚骨、あっさり醤油、魚介系などジャンルも様々。それぞれのラーメンの特徴や魅力を、写真とともにわかりやすくお伝えします。</p>
+</section>
+    </div>
+  </section>
+
+  <section id="ranking" class="section">
+    <div class="container">
+      <h2>ランキング TOP 5</h2>
+      <div class="card-list">
+
+        <div class="card">
+          <img src="ramen1.image/fukumashi00-644x483.jpg" alt="横浜家系ラーメン 福まし家の塩MAXラーメン" loading="lazy">
+
+          <div class="card-content">
+            <h3>第1位：横浜家系ラーメン 福まし家</h3>
+            <p>塩MAXラーメン ¥980</p>
+            <p><strong><br>
+            スープ ：家系<br>
+            麺 ： 中太ちぢれ麺<br>
+            具 ：チャーシュー・ほうれん草・ゆでたまご・うずら卵・海苔<br>
+            <p><i data-lucide="map-pin"></i> <a href="https://www.google.com/maps?q=大分県大分市中央町2-6-14" target="_blank">地図</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="ramen1.image\o0800059915091330684.jpg" alt="嫁の中華そばの嫁の推しメン" loading="lazy">
+
+          <div class="card-content">
+            <h3>第2位：嫁の中華そば</h3>
+            <p>「嫁の推しメン」1100円</p>
+            <p><strong><br>
+            スープ ：醤油<br>
+            麺 ： 中太ちぢれ麺<br>
+            具 ：チャーシュー・メンマ・ゆでたまご・海苔<br>
+            <p><i data-lucide="map-pin"></i> <a href="https://www.google.com/maps?q=大分県大分市中鶴崎1-1-30" target="_blank">地図</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+        <img src="ramen1.image\unnamed.jpg" alt="らうめん 点法輪のSin佐伯ラーメン" loading="lazy">
+          <div class="card-content">
+            <h3>第3位：らうめん 点法輪</h3>
+            <p>Sin佐伯ラーメン ¥650</p>
+            <p><strong><br>
+            スープ ：豚骨<br>
+            麺 ： 中太麺<br>
+            具 ：チャーシュー・ねぎ・ごま・もやし<br>
+            <p><i data-lucide="map-pin"></i> <a href="https://www.google.com/maps?q=大分県佐伯市鶴岡西町2-233" target="_blank">地図</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="ramen1.image\640x640_rect_198c4e2c706917b8237bf37da23db481.jpg" alt="丸優ラーメンのチャーシューメン" loading="lazy">
+          <div class="card-content">
+            <h3>第4位：丸優ラーメン</h3>
+            <p>丸優特製ラーメン ¥1250</p>
+            <p><strong><br>
+            スープ ：豚骨（こってり）<br>
+            麺 ： 極細ストレート麺<br>
+            具 ：チャーシュー・ねぎ<br>
+            <p><i data-lucide="map-pin"></i> <a href="https://www.google.com/maps?q=大分県大分市元町3-3" target="_blank">地図</a></p>
+          </div>
+        </div>
+
+        <div class="card">
+        <img src="ramen1.image\0cc144aa.jpg" alt="トラの夢のローストチャーシュー麺" loading="lazy">
+          <div class="card-content">
+            <h3>第5位：トラの夢</h3>
+            <p>ローストチャーシュー麺 ¥1000</p>
+            <p><strong><br>
+            スープ ：豚骨（こってり）<br>
+            麺 ： 細ストレート麺<br>
+            具 ：チャーシュー・鶏チャーシュー・ねぎ・糸唐辛子・ゴマ<br>
+          </strong></p>
+            <p><i data-lucide="map-pin"></i> <a href="https://www.google.com/maps?q=大分県大分市森633―5" target="_blank">地図</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div class="container">
+      <p>&copy; 2025 個人的ラーメンランキング</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = document.getElementById('nav');
+    menuBtn.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>
